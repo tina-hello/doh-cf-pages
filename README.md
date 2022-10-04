@@ -1,7 +1,7 @@
 # doh-cf-pages
 A very minimalist DNS-over-HTTPS proxy on Cloudflare Pages.
 
-Clone this repo on your own GitHub account, sign up for a free [Cloudlare Pages](https://pages.cloudflare.com) account, create a new project, connect to git, choose your cloned project and you're done. Use the address anywhere DoH is accepted (AdGuard, browsers secure DNS settings, YogaDNS, Intra, Nebulo etc).
+Clone this repo on your own GitHub account, sign up for a free [Cloudlare Pages](https://pages.cloudflare.com) account, create a new project, connect to git, choose your cloned project and you're done. Use the address anywhere DoH is accepted (AdGuard, browsers secure DNS settings, YogaDNS, Intra, Nebulo etc). When a path is needed, use the [testpath](https://github.com/tina-hello/doh-cf-pages/tree/testpath) branch that will deploy to `youraddress.pages.dev/dns-query`
 
 Feel free to replace the `doh` variable inside [index.js](/functions/index.js) with [any DNS-over-HTTPS server you want](https://github.com/curl/curl/wiki/DNS-over-HTTPS). Confirmed to work with Cloudflare itself, Google, and NextDNS. The rarely supported [JSON API](https://developers.google.com/speed/public-dns/docs/doh/json) is available through the `dohjson` variable. Some providers use identical URL (Cloudlfare, NextDNS), some use `/resolve` instead of `/dns-query` for path (Google, AdGuard).
 
