@@ -30,13 +30,13 @@ export const onRequestGet = async ({request}) => {
 export const onRequestPost = async ({ request }) => {
 	const { headers } = request 
   if (headers.get('content-type')==contype) {
-        return await fetch(doh, {
+        return fetch(doh, {
             method: 'POST',
             headers: {
                 'Accept': contype,
                 'Content-Type': contype,
             },
-            body: await request.arrayBuffer()
+            body: request.body,
         });
 		 } else {
         return new Response("", {status: 404})
